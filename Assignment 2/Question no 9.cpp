@@ -1,14 +1,18 @@
 #include <stdio.h>
 
+// Function to sort an array in descending order
 void sort(int arr[], int size) {
     int i, j, temp;
-
+	
+	 // Loop through each element in the array
     for (i = 0; i < size - 1; i++) {
         for (j = i + 1; j < size; j++) {
+        	
+        	// Swap if the current element is smaller than the next
             if (arr[i] < arr[j]) {
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                temp = arr[i];    // Store current element temporarily
+                arr[i] = arr[j];  // Place the larger element in the current position
+                arr[j] = temp;    // Move the smaller element to the next position
             }
         }
     }
@@ -31,9 +35,13 @@ int main() {
     printf("Input the new value to insert: ");
     scanf("%d", &new_val);
 
+	// Add the new value to the end of the array
     arr[n] = new_val;
+    
+    // Increment the array size
     n++;
 
+ // Sort the array in descending order
     sort(arr, n);
 
     printf("The array after sorting in descending order is:\n");

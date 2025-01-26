@@ -8,16 +8,25 @@ int main() {
         for (j = 0; j < 3; j++) {
         	printf("-)");
             scanf("%d", &mat[i][j]);
+            
+            // Initialize `min` and `max` with the first element
             if (i == 0 && j == 0) {
                 min = max = mat[i][j];
             }
+            
+             // Update `min` if the current element is smaller
             if (mat[i][j] < min) {
                 min = mat[i][j];
             }
+            
+             // Update `max` if the current element is larger
             if (mat[i][j] > max) {
                 max = mat[i][j];
             }
+            
+            // Diagonal elements should be 1, and non-diagonal elements should be 0
             if ((i == j && mat[i][j] != 1) || (i != j && mat[i][j] != 0)) {
+            	// Mark as not an identity matrix
                 isIdentity = 0;
             }
         }

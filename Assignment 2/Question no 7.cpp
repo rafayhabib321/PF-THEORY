@@ -7,12 +7,14 @@ int main() {
     scanf("%d", &n);
 
     int arr1[n], arr2[n];
-
+	
+	//first store number in 1st array
     printf("Input %d elements in the array:\n", n);
     for (i = 0; i < n; i++) {
         printf("element : %d : ", i+1);
         scanf("%d", &arr1[i]);
 
+		//copy arr1 in arr2
         arr2[i] = arr1[i];
 
         if (arr1[i] % 2 == 0) {
